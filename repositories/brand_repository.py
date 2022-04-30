@@ -23,6 +23,16 @@ def select_all():
         brands.append(brand)
     return brands
 
+def select(id):
+    brand = None
+    sql = "SELECT * FROM brands WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]   
+
+    if result is not None:
+        brand = Brand(result['name'], result['id'])
+    return brand    
+
 
 def delete_all():
     sql = "DELETE  FROM brands"

@@ -11,11 +11,25 @@ def brands():
     return render_template("brands/index.html", all_brands = brands)
 
     # NEW
-# GET '/brands/new'
+# GET '/brands/new'  not sure about these paths
+
+@brands_blueprint.route("/brands/new", methods=['GET'])
+def new_brand():
+    return render_template("brands/new.html")
+    
 
 
 # CREATE
 # POST '/brands'
+@brands_blueprint.route("/brands", methods=['POST'])
+def create_brand():
+    name = request.form['name']
+    brand = Brand(name)
+    brand_repository.save(brand)
+    return redirect('/brands')
+
+
+
 
 
 

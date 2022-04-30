@@ -33,7 +33,7 @@ def select_all():
     for row in results:
         brand = brand_repository.select(row['brand_id'])
         supplier = supplier_repository.select(row['supplier_id'])
-        product = Product(row['type'], row['in_stock'], row['low_stock_threshold'], row['buying_price'], row['selling_price'], supplier, brand, row['id]'])
+        product = Product(row['type'], row['in_stock'], row['low_stock_threshold'], row['buying_price'], row['selling_price'], supplier, brand, row['id'])
         products.append(product)
 
     return product
@@ -55,8 +55,18 @@ def select(id):
 
 def delete_all():
     sql = "DELETE  FROM products"
-    run_sql(sql)        
+    run_sql(sql)     
 
+def delete(id):
+    sql = "DELETE FROM products WHERE id = %s"       
+    values = [id]
+    run_sql(sql, values)
+
+def update(product):
+    sql = "UPDATE products SET (type, in_stock, low_stock_threshold, buying_price, selling_price, supplier_id, brand_id) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [product.type, product.in_stock, product.low_stock_threshold, product.buying_price, product.selling_price, product.supplier, product.brand, product.id]
+    print(values)
+    run_sql(sql, values)
 
 
 
