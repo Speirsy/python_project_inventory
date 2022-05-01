@@ -8,21 +8,25 @@ import repositories.brand_repository as brand_repository
 
 products_blueprint = Blueprint("products", __name__)
 
-# GET '/products/new'
+# INDEX
+# GET '/products'
 
 @products_blueprint.route("/products")
 def products():
     products = product_repository.select_all()
     return render_template("products/index.html", all_products = products)
 
+# NEW
+# GET '/products/new'
 
 @products_blueprint.route("/products/new", methods=['GET'])
 def new_product():
     suppliers = supplier_repository.select_all()
     brands = brand_repository.select_all()
     return render_template("products/new.html", all_suppliers = suppliers, all_brands = brands)
-
-    # CREATE POST '/products'
+    
+# CREATE 
+# POST '/products'
 
 @products_blueprint.route("/products", methods=['POST'])
 def create_product():
@@ -46,7 +50,7 @@ def show_product(id):
     return render_template('products/show.html', product = product)
 
 # EDIT
-# PUT '/products/<id>
+# PUT '/products/<id>/edit'
 
 # not sure about this function. edit? is it workking with update? 
 
@@ -59,6 +63,7 @@ def edit_product(id):
 
 
 # UPDATE  
+# PUT '/products/<id>
 # do I need PRINT statements somewhere here?
 
 @products_blueprint.route("/products/<id>", methods=['POST'])
@@ -74,8 +79,8 @@ def update_product(id):
     product_repository.update(product)
     return redirect('/products')
 
-
-# DELETE '/products/<id>
+# DELETE
+# DELETE '/products/<id>'
 
 @products_blueprint.route("/products/<id>/delete", methods=['POST'])
 def delete_product(id):

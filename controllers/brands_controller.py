@@ -11,7 +11,7 @@ def brands():
     return render_template("brands/index.html", all_brands = brands)
 
     # NEW
-# GET '/brands/new'  not sure about these paths
+# GET '/brands/new'  I DON'T KNOW IF I WANT THE ROUTES TO BE AS THEY ARE. 
 
 @brands_blueprint.route("/brands/new", methods=['GET'])
 def new_brand():

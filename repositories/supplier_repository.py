@@ -33,20 +33,13 @@ def select(id):
         supplier = Supplier(result['name'], result['contact'], result['carraige_paid'], result['id'])
     return supplier
     
-
-
-def delete_all():
-    sql = "DELETE  FROM suppliers"
-    run_sql(sql)    
+def update(supplier):
+    sql = "UPDATE suppliers SET (name, contact, carraige_paid ) = (%s, %s, %s) WHERE id = %s"
+    values = [supplier.name, supplier.contact, supplier.carraige_paid, supplier.id]
+    print(values)
+    run_sql(sql, values)    
 
 def delete(id):
     sql = "DELETE FROM suppliers WHERE id = %s"       
     values = [id]
-    run_sql(sql, values)
-
-def update(supplier):
-    sql = "UPDATE suppliers SET (name, contact, carraige_paid ) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [supplier.name, supplier.contact, supplier.carraige_paid, supplier.id]
-    print(values)
-    run_sql(sql, values) 
-       
+    run_sql(sql, values)    

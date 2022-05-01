@@ -33,6 +33,11 @@ def select(id):
         brand = Brand(result['name'], result['id'])
     return brand    
 
+def update(brand):
+    sql = "UPDATE brands SET (name) = (%s) WHERE id = %s"
+    values = [brand.name, brand.id]
+    print(values)
+
 
 def delete_all():
     sql = "DELETE  FROM brands"

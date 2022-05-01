@@ -50,23 +50,22 @@ def select(id):
         product = Product(result['type'], result['in_stock'], result['low_stock_threshold'], result['buying_price'], result['selling_price'], supplier, brand, result['id'])
     return product
 
-
-        
-
 def delete_all():
-    sql = "DELETE  FROM products"
-    run_sql(sql)     
+    sql = "DELETE FROM products"
+    run_sql(sql)   
+
+def update(product):
+    sql = "UPDATE products SET (type, in_stock, low_stock_threshold, buying_price, selling_price, supplier_id, brand_id) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [product.type, product.in_stock, product.low_stock_threshold, product.buying_price, product.selling_price, product.supplier.id, product.brand.id, product.id]
+    print(values)
+    run_sql(sql, values)          
 
 def delete(id):
     sql = "DELETE FROM products WHERE id = %s"       
     values = [id]
     run_sql(sql, values)
 
-def update(product):
-    sql = "UPDATE products SET (type, in_stock, low_stock_threshold, buying_price, selling_price, supplier_id, brand_id) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [product.type, product.in_stock, product.low_stock_threshold, product.buying_price, product.selling_price, product.supplier, product.brand, product.id]
-    print(values)
-    run_sql(sql, values)
+
 
 
 
