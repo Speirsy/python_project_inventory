@@ -1,5 +1,38 @@
 {% extends 'base.html' %}
 {% block content  %}  
-    is this suppliers?
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h2>Suppliers</h2>
+  
+<table style = "width:50%"">
+  <tr>
+    <th>Supplier</th>
+    <th>Telephonic device</th>
+    <th>Carraige Paid</th>
+  
+  </tr>
+  
+
+   
+  {% for supplier in all_suppliers %}
+  <tr>
+ 
+    <td>{{supplier.name}}</td>
+    <td>{{supplier.contact}}</td>
+    <td>{{supplier.carraige_paid}}</td>
+
+
+
+
+
+  </tr>
+  {% endfor %}
+
+</table>
 
 {% endblock content  %}  

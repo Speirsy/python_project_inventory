@@ -12,12 +12,14 @@
   <header>
     <nav>
       <ul class="menu">
-        <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="{{ url_for('brands.brands') }}">Brands</a></li>
-        <li><a href="{{ url_for('products.products') }}">All Products</a></li>
-        <li><a href="{{ url_for('suppliers.suppliers') }}">Suppliers</a></li>
-        
-        <li><a href="/products/new">New Product</a></li>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('products.products') }}">All Products</a>
+        <a href="/products/new">Add Product</a>
+        <a href="{{ url_for('suppliers.suppliers') }}">Suppliers</a>
+        <a href="/suppliers/new">Add Supplier</a>
+        <a href="/brands/index">Brands</a>
+        <a href="/supplier/">Products by Suppliers</a>
+        <a href="/brand/">Products by Brands</a>
       </ul>
     </nav>
   </header>

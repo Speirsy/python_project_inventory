@@ -1,5 +1,23 @@
 {% extends 'base.html' %}
 {% block content  %}  
-    is this brands.brands?
-    
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h2>Brands</h2>
+  
+<table style = "width:50%"">
+  <tr>
+    <th>Name</th>
+  </tr>
+
+  <tr> 
+    <td>{{brand.name}}</td>
+  </tr>
+
+</table>
+
 {% endblock content  %}  

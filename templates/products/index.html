@@ -1,5 +1,13 @@
 {% extends 'base.html' %}
 {% block content  %}  
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h2>A basic HTML table</h2>
   
 <table style = "width:30%"">
   <tr>
@@ -23,21 +31,14 @@
     <td>{{product.stock_level()}}</td>
     <td>{{product.buying_price}}</td>
     <td>{{product.selling_price}}</td>
-    <td>{{product.calculate_mark_up}}%</td>
+    <td>{{product.calculate_mark_up()}}%</td>
     <td> <a href="/suppliers/{{product.supplier.id}}">{{product.supplier.name}}</a><td>
 
-      <!-- dynamin links working but getting not founds
-      mark_up method for 2 dec places not working -->
+
 
   </tr>
   {% endfor %}
 
 </table>
-
-  
-
-
-
-
 
 {% endblock content  %}  
