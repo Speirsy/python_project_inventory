@@ -36,7 +36,7 @@ def select_all():
         product = Product(row['type'], row['in_stock'], row['low_stock_threshold'], row['buying_price'], row['selling_price'], supplier, brand, row['id'])
         products.append(product)
 
-    return product
+    return products
 
 def select(id):
     product = None

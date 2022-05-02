@@ -1,4 +1,43 @@
 {% extends 'base.html' %}
 {% block content  %}  
-    is this products.products?
+  
+<table style = "width:30%"">
+  <tr>
+    <th>Type</th>
+    <th>Brand</th>
+    <th>In Stock</th>
+    <th>Stock Level</th>
+    <th>Buying</th>
+    <th>Selling</th>
+    <th>Mark Up</th>
+    <th>Supplier</th>
+  </tr>
+  
+
+   
+  {% for product in all_products %}
+  <tr>
+    <td> <a href="/products/{{product.id}}">{{product.type}}</a></td>
+    <td> <a href="/brands/{{product.brand.id}}">{{product.brand.name}}</a></td>
+    <td>{{product.in_stock}}</td>
+    <td>{{product.stock_level()}}</td>
+    <td>{{product.buying_price}}</td>
+    <td>{{product.selling_price}}</td>
+    <td>{{product.calculate_mark_up}}%</td>
+    <td> <a href="/suppliers/{{product.supplier.id}}">{{product.supplier.name}}</a><td>
+
+      <!-- dynamin links working but getting not founds
+      mark_up method for 2 dec places not working -->
+
+  </tr>
+  {% endfor %}
+
+</table>
+
+  
+
+
+
+
+
 {% endblock content  %}  

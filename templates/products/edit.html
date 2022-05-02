@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/products/{{product.id}}" method="post">
+  <div>
+    <label for="type">Type:</label>
+    <input type="text" id="type" name="type" value="{{product.type}}" required>
+  </div>
+<!-- 
+  <div>
+    <label for="in_stock">In Stock:</label>
+    <input type="text" id="in_stock" name="in_stock" value="{{product.in_stock}}" required autofocus>
+  </div>
+
+  <div>
+    <label for="completed">Publisher:</label>
+    <input type="text" id="publisher" name="publisher" value="{{book.publisher}}" required autofocus>
+  </div> -->
+
+  <div>
+    <label for="supplier">Supplier:</label>
+    <select id="supplier" name="supplier_id">
+      {% for supplier in all_suppliers %}
+        <option value="{{ supplier.id }}"
+          {% if product.supplier.id == supplier.id %} selected="selected"{% endif %}>
+          {{ supplier.name() }}
+        </option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <button type="submit">Update Product</button>
+
+</form>
+
+{% endblock %}

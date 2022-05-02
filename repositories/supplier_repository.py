@@ -32,6 +32,11 @@ def select(id):
     if result is not None:
         supplier = Supplier(result['name'], result['contact'], result['carraige_paid'], result['id'])
     return supplier
+
+
+def delete_all():
+    sql = "DELETE FROM suppliers"
+    run_sql(sql)       
     
 def update(supplier):
     sql = "UPDATE suppliers SET (name, contact, carraige_paid ) = (%s, %s, %s) WHERE id = %s"

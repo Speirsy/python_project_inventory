@@ -41,6 +41,7 @@ def show_supplier(id):
     supplier = supplier_repository.select(id)
     return render_template('supplier/show.html', supplier = supplier)
 
+
 # EDIT
 #GET '/suppliers/<id>/edit
 
