@@ -26,7 +26,7 @@ table, th, td {
   {% for product in all_products %}
   <tr>
     <td> <a href="/products/{{product.id}}/edit">{{product.type}}</a></td>
-    <td> <a href="/brands/{{product.brand.id}}">{{product.brand.name}}</a></td>
+    <td> <a href="/brands">{{product.brand.name}}</a></td>
     <td>{{product.in_stock}}</td>
     <td>{{product.stock_level()}}</td>
     <td>{{product.buying_price}}</td>
