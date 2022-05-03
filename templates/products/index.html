@@ -7,7 +7,7 @@ table, th, td {
 </style>
 <body>
 
-<h2>A basic HTML table</h2>
+<h2>All Products</h2>
   
 <table style = "width:50%"">
   <tr>
@@ -25,7 +25,7 @@ table, th, td {
    
   {% for product in all_products %}
   <tr>
-    <td> <a href="/products/{{product.id}}">{{product.type}}</a></td>
+    <td> <a href="/products/{{product.id}}/edit">{{product.type}}</a></td>
     <td> <a href="/brands/{{product.brand.id}}">{{product.brand.name}}</a></td>
     <td>{{product.in_stock}}</td>
     <td>{{product.stock_level()}}</td>
@@ -33,7 +33,7 @@ table, th, td {
     <td>{{product.selling_price}}</td>
     <td>{{product.calculate_mark_up()}}%</td>
     <td> <a href="/suppliers/{{product.supplier.id}}">{{product.supplier.name}}</a><td>
-    <td> <a href="/products/{{product.id}}/edit">Edit</a></td>
+    <td> <a href="/products/{{product.id}}/edit">Edit Product</a></td>
 
 
   </tr>
