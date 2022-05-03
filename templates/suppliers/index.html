@@ -22,7 +22,8 @@ table, th, td {
   {% for supplier in all_suppliers %}
   <tr>
  
-    <td>{{supplier.name}}</td>
+    <!-- <td>{{supplier.name}}</td> -->
+    <td>{{supplier.name}}  <a href="/suppliers/{{supplier.id}}/edit">Edit</a></td>
     <td>{{supplier.contact}}</td>
     <td>{{supplier.carraige_paid}}</td>
 

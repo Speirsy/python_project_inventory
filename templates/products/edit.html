@@ -6,16 +6,25 @@
     <label for="type">Type:</label>
     <input type="text" id="type" name="type" value="{{product.type}}" required>
   </div>
-<!-- 
+
   <div>
     <label for="in_stock">In Stock:</label>
-    <input type="text" id="in_stock" name="in_stock" value="{{product.in_stock}}" required autofocus>
+    <input type="number" id="in_stock" name="in_stock" value="{{product.in_stock}}" required />
+  </div>
+  <div>
+    <label for="low_stock_threshold">Low Stock Threshold:</label>
+    <input type="number" id="low_stock_threshold" name="low_stock_threshold" value="{{product.low_stock_threshold}}" required />
   </div>
 
   <div>
-    <label for="completed">Publisher:</label>
-    <input type="text" id="publisher" name="publisher" value="{{book.publisher}}" required autofocus>
-  </div> -->
+    <label for="buying_price">Buying Price:</label>
+    <input type="number" id="buying_price" name="buying_price" value="{{product.buying_price}}" required />
+  </div>
+
+  <div>
+    <label for="selling_price">Selling Price:</label>
+    <input type="number" id="selling_price" name="selling_price" value="{{product.selling_price}}" required />
+  </div>
 
   <div>
     <label for="supplier">Supplier:</label>
@@ -23,7 +32,16 @@
       {% for supplier in all_suppliers %}
         <option value="{{ supplier.id }}"
           {% if product.supplier.id == supplier.id %} selected="selected"{% endif %}>
-          {{ supplier.name() }}
+          {{ supplier.name }}
+        </option>
+      {% endfor %}
+    </select>
+    <label for="brand">Brand:</label>
+    <select id="brand" name="brand_id">
+      {% for brand in all_brands %}
+        <option value="{{ brand.id }}"
+          {% if product.brand.id == brand.id %} selected="selected"{% endif %}>
+          {{ brand.name }}
         </option>
       {% endfor %}
     </select>

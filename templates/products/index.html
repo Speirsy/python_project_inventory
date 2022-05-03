@@ -9,7 +9,7 @@ table, th, td {
 
 <h2>A basic HTML table</h2>
   
-<table style = "width:30%"">
+<table style = "width:50%"">
   <tr>
     <th>Type</th>
     <th>Brand</th>
@@ -33,7 +33,7 @@ table, th, td {
     <td>{{product.selling_price}}</td>
     <td>{{product.calculate_mark_up()}}%</td>
     <td> <a href="/suppliers/{{product.supplier.id}}">{{product.supplier.name}}</a><td>
-
+    <td> <a href="/products/{{product.id}}/edit">Edit</a></td>
 
 
   </tr>

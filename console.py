@@ -75,7 +75,7 @@ product_repository.save(product14)
 product15 = Product("Drill Bits", 3, 0, 17, 25, supplier2, brand1)
 product_repository.save(product15)
 
-
+breakpoint()
 
 
 

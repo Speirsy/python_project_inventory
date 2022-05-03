@@ -11,13 +11,26 @@ table, th, td {
   
 <table style = "width:50%"">
   <tr>
-    <th>Name</th>
+    <th>Brand</th>
+  
   </tr>
+  
 
-  <tr> 
-    <td>{{brand.name}}</td>
+   
+  {% for brand in all_brands %}
+  <tr>
+ 
+    <!-- <td>{{supplier.name}}</td> -->
+    <td>{{brand.name}}  <a href="/brands/{{brand.id}}/edit">Edit not yet</a></td>
+
+
+
+
+
+
   </tr>
+  {% endfor %}
 
 </table>
 
-{% endblock content  %}  
+{% endblock content  %} 
