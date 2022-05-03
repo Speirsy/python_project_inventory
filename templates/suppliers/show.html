@@ -1,15 +1,39 @@
 {% extends 'base.html' %}
 {% block content  %}  
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h2>Supplier</h2>
+  
+<table style = "width:50%"">
+  <tr>
+    <th>Supplier</th>
+    <th>Telephonic device</th>
+    <th>Carraige Paid</th>
+  
+  </tr>
   
 
-  {% endfor %}
+   
+
+  <tr>
+ 
+    <!-- <td>{{supplier.name}}</td> -->
+    <td>{{supplier.name}}  <a href="/suppliers/{{supplier.id}}/edit">Edit</a></td>
+    <td>{{supplier.contact}}</td>
+    <td>{{supplier.carraige_paid}}</td>
 
 
 
-  
 
 
+  </tr>
 
 
+</table>
 
 {% endblock content  %}  

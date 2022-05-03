@@ -39,7 +39,7 @@ def create_supplier():
 @suppliers_blueprint.route("/suppliers/<id>", methods=['GET'])    
 def show_supplier(id):
     supplier = supplier_repository.select(id)
-    return render_template('supplier/show.html', supplier = supplier)
+    return render_template('suppliers/show.html', supplier = supplier)
 
 
 # EDIT
