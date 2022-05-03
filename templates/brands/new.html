@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+form for adding a brand
+<form action="/Brands" method="post">
+
+  <div>
+    <label for="brand">Brand Name:</label>
+    <input type="text" id="brand" name="name" value="supplier" required autofocus />
+  </div>
+
+
+  <button type="submit">Add Brand</button>
+
+</form>
+
+{% endblock %}
