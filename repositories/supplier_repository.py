@@ -15,7 +15,7 @@ def save(supplier):
 def select_all():
     suppliers = []
 
-    sql = "SELECT * FROM suppliers"
+    sql = "SELECT * FROM suppliers ORDER BY name"
     results = run_sql(sql)
 
     for row in results:

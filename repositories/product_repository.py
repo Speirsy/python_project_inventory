@@ -27,7 +27,8 @@ def save(product):
 def select_all():
     products = []
 
-    sql = "SELECT * FROM products"
+    sql = "SELECT * FROM products ORDER BY type"
+
     results = run_sql(sql)
 
     for row in results:
