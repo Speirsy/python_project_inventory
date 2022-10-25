@@ -21,6 +21,14 @@ class Product:
           
 
 
+    # method
+    #   if stock is 0 Then
+    #       "No Stock"
+    #   elif stock is <= low stock threshold Then
+    #       "Low Stock"
+    #   else 
+    #       "In Stock"
+
     def stock_level(self):
 
         if self.in_stock == 0:
