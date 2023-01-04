@@ -6,7 +6,7 @@ A small hardware retailer wants to automate his stock inventory. He wishes to lo
 
 The user should be able to
 
-- view a full list of store products associated data - Supplier, Brand, Stock Level, Cost, Mark Up, and links to an edit page for changes and adds. 
+- view a full list of store products and associated data - Supplier, Brand, Stock Level, Cost, Mark Up, and links to an edit page for changes and adds. 
 - view a full list of Suppliers with links for individual edits and a button to add more.
 - view a full list of Brands with links for edits and a button to add more.
 - enter purchase and sale price for each product and view mark up as a percentage. 
